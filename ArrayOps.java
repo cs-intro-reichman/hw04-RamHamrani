@@ -14,17 +14,15 @@ public class ArrayOps {
             }
         
     public static int findMissingInt(int[] array) {
-        
-        int[] newArray = new int[(array.length)];
         int arraySum = 0;
         int newArraySum = 0;
         
-            for (int i = 0; i < (array.length-1); i++) {
+            for (int i = 0; i < array.length; i++) {
                     arraySum += array[i];
             }
         
-            for (int j = 0; j < (newArray.length); j++) {
-                newArraySum += newArray[j];
+            for (int j = 0; j < array.length; j++) {
+                newArraySum += j;
             }
                 missingInt = newArraySum - arraySum;
                 return missingInt;
@@ -53,40 +51,41 @@ public class ArrayOps {
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
          boolean k = false;
          for(int i= 0; i < array1.length; i++) {
-            for(int j = 0; j < array2.length; j++){
+            for(int j = 0; j < array2.length;){
                 if(array1[i] == array2[j]){
                     k = true;
                 }
                     else{
-                       k = false;
+                        j++;
+                    }
                     }
             } 
-            i++;
+            return k;
                 }
             
-                return k;
-            }
     
 
     public static boolean isSorted(int [] array) {
-        boolean k = false;
-        for(int i= 0; i < (array.length-1); i++) {
+        boolean isSorted = false;
+        for(int i= 0; i < array.length; ) {
                if(array[i] > array[(i +1)]){
-                   k = true;
+                isSorted = true;
+                i++;
                }
                    else{
                       break;
                    }
-                   i++;
-           } for(int i = 0; i < (array.length-1); i++){
+                   
+           } 
+           for(int i = 0; i < array.length;){
                 if(array[i] < array[(i+1)]){
-                    k = true;
+                    isSorted = true;
             }
             else{
                 break;
             }
            }
-           return k;
+           return isSorted;
                }
            
                
