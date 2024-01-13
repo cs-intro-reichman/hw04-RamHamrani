@@ -1,7 +1,7 @@
 public class ArrayOps {
     static int[] array1;
     static int[] array2;
-    static int[] array ;
+    static int[] array;
     static int missingInt;
     public static void main(String[] args) {
          
@@ -19,11 +19,11 @@ public class ArrayOps {
         int arraySum = 0;
         int newArraySum = 0;
         
-            for (int i = 0; i < (array.length -1); i++) {
+            for (int i = 0; i < (array.length); i++) {
                     arraySum += array[i];
             }
         
-            for (int j = 0; j < newArray.length; j++) {
+            for (int j = 0; j < (newArray.length); j++) {
                 newArraySum += newArray[j];
             }
                 missingInt = newArraySum - arraySum;
