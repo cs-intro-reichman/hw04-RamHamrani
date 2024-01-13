@@ -15,11 +15,11 @@ public class ArrayOps {
         
     public static int findMissingInt(int[] array) {
         
-        int[] newArray = new int[(array.length +1)];
+        int[] newArray = new int[(array.length)];
         int arraySum = 0;
         int newArraySum = 0;
         
-            for (int i = 0; i < (array.length); i++) {
+            for (int i = 0; i < (array.length-1); i++) {
                     arraySum += array[i];
             }
         
@@ -41,7 +41,7 @@ public class ArrayOps {
             if(maxValue < array[i]){
                 maxValue = array[i];
             }
-                if( maxValue > secondMaxValue && secondMaxValue < i){
+                if( maxValue >= secondMaxValue && secondMaxValue < array[i]){
                     secondMaxValue = array[i];
                 }
             }
