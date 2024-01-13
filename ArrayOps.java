@@ -1,59 +1,51 @@
 public class ArrayOps {
+    static int[] array1;
+    static int[] array2;
+    static int[] array ;
+    static int missingInt;
     public static void main(String[] args) {
-        int userArrayLength = Integer.parseInt(args[0]);
-        int[] array = new int[userArrayLength] ;        
-        int missingInt = findMissingInt(array);
-            System.out.println(missingInt);
+         
+        System.out.println(findMissingInt(array));
            System.out.println(secondMaxValue(array));
-           System.out.println(containsTheSameElements(array, array));
+           System.out.println(containsTheSameElements(array1, array2));
            System.out.println(isSorted(array));
 
 
             }
         
     public static int findMissingInt(int[] array) {
-                // Assuming the first command line argument is the length of the array
-        int lengthOfArray = array.length;
         
-                // Populate your arrays with some values (this is just an example)
-        int[] missingArray = new int[lengthOfArray - 1];
-        int[] newArray = new int[lengthOfArray];
-        
-                // Populate missingArray and newArray with some values
-        
-        int missingArraySum = 0;
+        int[] newArray = new int[(array.length +1)];
+        int arraySum = 0;
         int newArraySum = 0;
         
-            for (int i = 0; i < missingArray.length; i++) {
-                    missingArraySum += missingArray[i];
+            for (int i = 0; i < (array.length -1); i++) {
+                    arraySum += array[i];
             }
         
             for (int j = 0; j < newArray.length; j++) {
                 newArraySum += newArray[j];
             }
-            if (newArraySum > missingArraySum) {
-                return newArraySum - missingArraySum;
-                
-            } else {
-                  
-                    return -1;
+                missingInt = newArraySum - arraySum;
+                return missingInt;
+            
                 }
-            }
+            
         
         
     public static int secondMaxValue(int [] array) {
-        int j = 0; int k = 0;
+        int maxValue = 0; int secondMaxValue = 0;
 
         for(int i=0; i<array.length; i++){
     
-            if(j < array[i]){
-                j = array[i];
+            if(maxValue < array[i]){
+                maxValue = array[i];
             }
-                if( j > k && k < i){
-                    k = array[i];
+                if( maxValue > secondMaxValue && secondMaxValue < i){
+                    secondMaxValue = array[i];
                 }
             }
-            return k;
+            return secondMaxValue;
         }
         
     
