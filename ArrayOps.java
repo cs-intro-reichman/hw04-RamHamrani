@@ -3,6 +3,7 @@ public class ArrayOps {
     static int[] array2;
     static int[] array;
     static int missingInt;
+    static boolean isEqual;
     public static void main(String[] args) {
          
         System.out.println(findMissingInt(array));
@@ -16,12 +17,10 @@ public class ArrayOps {
     public static int findMissingInt(int[] array) {
         int arraySum = 0;
         int newArraySum = 0;
-        
             for (int i = 0; i < array.length; i++) {
                     arraySum += array[i];
             }
-        
-            for (int j = 0; j < array.length; j++) {
+            for (int j = 0; j <= array.length; j++) {
                 newArraySum += j;
             }
                 missingInt = newArraySum - arraySum;
@@ -32,15 +31,15 @@ public class ArrayOps {
         
         
     public static int secondMaxValue(int [] array) {
-        int maxValue = 0; int secondMaxValue = 0;
-
-        for(int i=0; i<array.length; i++){
+        int maxValue = array[0];
             for(int j = 0; j<array.length; j++){
     
             if(maxValue < array[j]){
                 maxValue = array[j];
             }
             }
+            int secondMaxValue = array[0];
+            for(int i=0; i<array.length; i++){
                 if( maxValue >= secondMaxValue && secondMaxValue < array[i]){
                     secondMaxValue = array[i];
                 }
@@ -52,14 +51,18 @@ public class ArrayOps {
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
          for(int i= 0; i < array1.length; i++) {
+            boolean isEqual = false;
             for(int j = 0; j < array2.length; j++){
-                if(array1[i] != array2[j]){
-                     return false;
+                if(array1[i] == array2[j]){
+                     isEqual = true;
+                }
+                if (isEqual = false) {
+                    return isEqual;
                 }
                     }
                     
-            } return true;
-            
+            } 
+            return isEqual;
                 }
             
     
