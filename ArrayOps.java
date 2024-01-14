@@ -35,9 +35,11 @@ public class ArrayOps {
         int maxValue = 0; int secondMaxValue = 0;
 
         for(int i=0; i<array.length; i++){
+            for(int j = 0; j<array.length; j++){
     
-            if(maxValue < array[i]){
-                maxValue = array[i];
+            if(maxValue < array[j]){
+                maxValue = array[j];
+            }
             }
                 if( maxValue >= secondMaxValue && secondMaxValue < array[i]){
                     secondMaxValue = array[i];
@@ -49,34 +51,29 @@ public class ArrayOps {
     
 
     public static boolean containsTheSameElements(int [] array1,int [] array2) {
-         boolean k = false;
          for(int i= 0; i < array1.length; i++) {
-            for(int j = 0; j < array2.length;){
-                if(array1[i] == array2[j]){
-                    k = true;
+            for(int j = 0; j < array2.length; j++){
+                if(array1[i] != array2[j]){
+                     return false;
                 }
-                    else{
-                        j++;
                     }
-                    }
-            } 
-            return k;
+                    
+            } return true;
+            
                 }
             
     
 
     public static boolean isSorted(int [] array) {
         boolean isSorted = false;
-        for(int i= 0; i < array.length; ) {
+        for(int i= 0; i < array.length; i++) {
                if(array[i] > array[(i +1)]){
                 isSorted = true;
-                i++;
-               }
-                   else{
-                      break;
-                   }
-                   
-           } 
+                }
+                else{
+                    break;
+                }
+               } 
            for(int i = 0; i < array.length;){
                 if(array[i] < array[(i+1)]){
                     isSorted = true;
@@ -86,8 +83,7 @@ public class ArrayOps {
             }
            }
            return isSorted;
-               }
+        }}
            
                
-           }
-
+           
