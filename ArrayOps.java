@@ -4,6 +4,7 @@ public class ArrayOps {
     static int[] array;
     static int missingInt;
     static boolean isEqual;
+    static boolean isSorted;
     public static void main(String[] args) {
          
         System.out.println(findMissingInt(array));
@@ -33,19 +34,23 @@ public class ArrayOps {
     public static int secondMaxValue(int [] array) {
         int maxValue = array[0];
             for(int j = 0; j<array.length; j++){
-    
             if(maxValue < array[j]){
                 maxValue = array[j];
             }
             }
+            for(int j = 0; j<array.length; j++){
+                if (maxValue == array[j]) {
+                    array[j] = 0;
+                    j = array.length;
+                  }  }
             int secondMaxValue = array[0];
             for(int i=0; i<array.length; i++){
-                if( maxValue >= secondMaxValue && secondMaxValue < array[i]){
-                    secondMaxValue = array[i];
-                }
+            if(secondMaxValue < array[i]){
+                secondMaxValue = array[i];
             }
-            return secondMaxValue;
-        }
+            
+        }return secondMaxValue;
+    }
         
     
 
@@ -68,7 +73,7 @@ public class ArrayOps {
     
 
     public static boolean isSorted(int [] array) {
-        boolean isSorted = false;
+        isSorted = false;
         for(int i= 0; i < array.length; i++) {
                if(array[i] > array[(i +1)]){
                 isSorted = true;
