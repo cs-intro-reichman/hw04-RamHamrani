@@ -4,7 +4,7 @@ public class ArrayOps {
     static int[] array;
     static int missingInt;
     static boolean isEqual;
-    static boolean isSorted;
+    static boolean isSorted = true;
     public static void main(String[] args) {
          
         System.out.println(findMissingInt(array));
@@ -73,23 +73,24 @@ public class ArrayOps {
     
 
     public static boolean isSorted(int [] array) {
-        isSorted = false;
+        int minCheck = array[0]; int maxCheck = array[0];
         for(int i= 0; i < array.length; i++) {
-               if(array[i] > array[(i +1)]){
-                isSorted = true;
+               if(array[i] < minCheck){
+                isSorted = false;
                 }
-                else{
-                    break;
+                minCheck = array[i];
                 }
-               } 
+                if (isSorted = false) {
+                    isSorted = true; 
+                }
+               
            for(int i = 0; i < array.length;){
-                if(array[i] < array[(i+1)]){
-                    isSorted = true;
+                if(array[i] > maxCheck){
+                    isSorted = false;
             }
-            else{
-                break;
+            maxCheck = array[i];
             }
-           }
+           
            return isSorted;
         }}
            
