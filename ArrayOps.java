@@ -3,7 +3,7 @@ public class ArrayOps {
     static int[] array2;
     static int[] array;
     static int missingInt;
-    static boolean isEqual;
+    static boolean isEqual = false;
     static boolean isSorted = true;
     public static void main(String[] args) {
          
@@ -61,14 +61,15 @@ public class ArrayOps {
                 if(array1[i] == array2[j]){
                      isEqual = true;
                 }
+            }
                 if (isEqual == false) {
                     return isEqual;
                 }
                     }
-                    
+                    return isEqual;
             } 
-            return isEqual;
-                }
+        
+                
             
     
 
