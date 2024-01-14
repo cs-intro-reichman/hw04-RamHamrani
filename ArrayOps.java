@@ -61,7 +61,7 @@ public class ArrayOps {
                 if(array1[i] == array2[j]){
                      isEqual = true;
                 }
-                if (isEqual = false) {
+                if (isEqual == false) {
                     return isEqual;
                 }
                     }
