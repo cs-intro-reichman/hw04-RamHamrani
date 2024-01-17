@@ -73,27 +73,26 @@ public class ArrayOps {
             
     
 
-    public static boolean isSorted(int [] array) {
-        int minCheck = array[0]; int maxCheck = array[0];
-        for(int i= 0; i < array.length; i++) {
-               if(array[i] < minCheck){
+    public static boolean isSorted(int[] array1) {
+        int minCheck = array1[0];
+        for (int i = 0; i < array1.length; i++) {
+            if (array1[i] < minCheck) {
                 isSorted = false;
-                }
-                minCheck = array[i];
-                }
-                if (isSorted = false) {
-                    isSorted = true; 
-                }
-               
-           for(int i = 0; i < array.length;){
-                if(array[i] > maxCheck){
+            }
+            minCheck = array1[i];
+        }
+        if (isSorted == false) {
+            isSorted = true;
+            int maxCheck = array1[0];
+            for (int i = 0; i < array1.length; i++) {
+                if (array1[i] > maxCheck) {
                     isSorted = false;
+                }
+                maxCheck = array1[i];
             }
-            maxCheck = array[i];
-            }
-           
-           return isSorted;
-        }}
-           
+        }
+        return isSorted;
+    }
+}
                
            
